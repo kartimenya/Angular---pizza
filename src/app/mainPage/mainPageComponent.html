@@ -1,0 +1,31 @@
+<page-header [sum]="localSum"></page-header>
+
+<!--<div>TOTAL SUM: {{sum}}</div>-->
+
+<div class="pizza-container">
+  <div class="pizza-card" *ngFor="let pizza of pizzaArray; index as i">
+    <img class="pizza-img" src="{{pizza.imageUrl}}">
+
+    <div class="pizza-info">
+      <div class="pizza-name">
+        {{pizza.name}}
+      </div>
+      <div class="pizza-ingredients">
+        {{pizza.ingredients}}
+      </div>
+      <div class="pizza-card-footer">
+        <div>
+          {{pizza.price}} руб.<br>
+          <span class="pizza-weight">{{pizza.weight}} гр.</span>
+        </div>
+
+        <div class="change-count-container">
+          <div class="change-count-button" (click)="changePizzaCount(i,false)">—</div>
+          <div class="pizza-count">{{pizza.count}}</div>
+          <div class="change-count-button" (click)="changePizzaCount(i,true)">+</div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
